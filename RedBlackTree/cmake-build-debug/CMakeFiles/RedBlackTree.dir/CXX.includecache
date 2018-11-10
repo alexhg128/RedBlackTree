@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/Structures/RedBlackTree.cpp
+RedBlackTree.h
+C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/Structures/RedBlackTree.h
+
+C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/Structures/RedBlackTree.h
+assert.h
+-
+vector
+-
+iostream
+-
+iomanip
+-
+
 C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/main.cpp
 iostream
 -
+Structures/RedBlackTree.h
+C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/Structures/RedBlackTree.h
 

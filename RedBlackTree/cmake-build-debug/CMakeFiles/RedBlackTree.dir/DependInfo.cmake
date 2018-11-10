@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/Structures/RedBlackTree.cpp" "C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/cmake-build-debug/CMakeFiles/RedBlackTree.dir/Structures/RedBlackTree.cpp.obj"
   "C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/main.cpp" "C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTree/cmake-build-debug/CMakeFiles/RedBlackTree.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

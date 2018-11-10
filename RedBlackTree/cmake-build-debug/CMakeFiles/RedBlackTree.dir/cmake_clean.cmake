@@ -4,7 +4,7 @@ file(REMOVE_RECURSE
   "RedBlackTree.pdb"
   "RedBlackTree.exe"
   "RedBlackTree.exe.manifest"
-  "RedBlackTree.lib"
+  "libRedBlackTree.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
