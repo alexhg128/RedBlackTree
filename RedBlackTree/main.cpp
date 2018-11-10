@@ -47,5 +47,12 @@ int main() {
     std::cout << std::endl;
     std::cout << tree->root->value;
 
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    tree->print2D(tree->root);
+
+
     return 0;
 }

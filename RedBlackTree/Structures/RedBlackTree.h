@@ -9,6 +9,7 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 //Color enumeration
 enum Color { RED, BLACK };
@@ -150,6 +151,36 @@ public:
         for(int i = 0; i < height; i++) {
             PrintRow(root, height, i);
         }
+    }
+
+    void print2DUtil(RedBlackNode<T>* root, int space)
+    {
+        // Base case
+        if (root == NULL)
+            return;
+
+        // Increase distance between levels
+        space += 4;
+
+        // Process right child first
+        print2DUtil(root->right, space);
+
+        // Print current node after space
+        // count
+        printf("\n");
+        for (int i = 4; i < space; i++)
+            printf(" ");
+        printf("%d\n", root->value);
+
+        // Process left child
+        print2DUtil(root->left, space);
+    }
+
+// Wrapper over print2DUtil()
+    void print2D(RedBlackNode<T>* root)
+    {
+        // Pass initial space count as 0
+        print2DUtil(root, 0);
     }
 
 private:
