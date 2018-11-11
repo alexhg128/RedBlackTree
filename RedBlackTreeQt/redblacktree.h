@@ -1,3 +1,8 @@
+#ifndef REDBLACKTREE_H
+#define REDBLACKTREE_H
+
+#endif // REDBLACKTREE_H
+
 /*
  *
  * Red-Black Tree Project
@@ -9,9 +14,6 @@
  * Hugo Alberto Valencia Corral (A01561688)
  *
  */
-
-#ifndef REDBLACKTREE_REDBLACKTREE_H
-#define REDBLACKTREE_REDBLACKTREE_H
 
 #include <cassert>
 #include <vector>
@@ -528,6 +530,3 @@ private:
     }
 
 };
-
-
-#endif //REDBLACKTREE_REDBLACKTREE_H
