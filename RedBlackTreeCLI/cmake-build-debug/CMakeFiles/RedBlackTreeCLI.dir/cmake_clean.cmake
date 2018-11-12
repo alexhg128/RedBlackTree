@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RedBlackTreeCLI.dir/main.cpp.obj"
   "CMakeFiles/RedBlackTreeCLI.dir/Structures/RedBlackTree.cpp.obj"
+  "CMakeFiles/RedBlackTreeCLI.dir/CLI/CLI.cpp.obj"
   "RedBlackTreeCLI.pdb"
   "RedBlackTreeCLI.exe"
   "RedBlackTreeCLI.exe.manifest"

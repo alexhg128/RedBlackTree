@@ -17,6 +17,8 @@
 
 #include <redblacktree.h>
 #include <string>
+#include <iostream>
+#include <sstream>
 #include <QString>
 
 /*
@@ -73,7 +75,7 @@ private:
             return;
         }
         QPrintInOrder(n->left, c);
-        output = output + std::to_string(n->value);
+        output = output + static_cast<std::ostringstream*>( &(std::ostringstream() << n->value) )->str();;
         if(c) {
             std::string color = n->color == BLACK ? "(B)" : "(R)";
             output += " " + color + " ";
@@ -88,7 +90,7 @@ private:
         }
         QPrintPostOrder(n->left, c);
         QPrintPostOrder(n->right, c);
-        output += std::to_string(n->value);
+        output = output + static_cast<std::ostringstream*>( &(std::ostringstream() << n->value) )->str();;
         if(c) {
             std::string color = n->color == BLACK ? "(B)" : "(R)";
             output += " " + color + " ";
@@ -100,7 +102,7 @@ private:
         if(!n) {
             return;
         }
-        output += std::to_string(n->value);
+        output = output + static_cast<std::ostringstream*>( &(std::ostringstream() << n->value) )->str();;
         if(c) {
             std::string color = n->color == BLACK ? "(B)" : "(R)";
             output += " " + color + " ";
@@ -120,8 +122,8 @@ private:
         output += "\n";
         for (int i = 10; i < space; i++) {
             output += " ";
-        }
-        output += std::to_string(root->value);
+        }        
+        output += static_cast<std::ostringstream*>( &(std::ostringstream() << root->value) )->str();
         if(c) {
             std::string color = root->color == BLACK ? "(B)" : "(R)";
             output += " " + color + " ";

@@ -1,10 +1,17 @@
-//
-// Created by Alejandro on 10/11/2018.
-//
+/*
+ *
+ * Red-Black Tree Project
+ * Data Structures Course
+ * 10/NOV/2018
+ *
+ * Alejandro Hahn Gallegos (A01561774)
+ * Yessica Janeth Hernandez Rosales (A01561794)
+ * Hugo Alberto Valencia Corral (A01561688)
+ *
+ */
 
-#ifndef REDBLACKTREECLI_REDBLACKTREE_H
-#define REDBLACKTREECLI_REDBLACKTREE_H
-
+#ifndef REDBLACKTREE_REDBLACKTREE_H
+#define REDBLACKTREE_REDBLACKTREE_H
 
 #include <cassert>
 #include <vector>
@@ -12,17 +19,33 @@
 #include <iomanip>
 #include <string>
 
+/*
+ * ---------------------------------------------------------
+ * Utility Enumerations
+ * ---------------------------------------------------------
+ */
+
 enum Color { RED, BLACK };
 enum WalkOrder { PREORDER, INORDER, POSTORDER };
 
+/*
+ * ---------------------------------------------------------
+ * Classes Declaration
+ * ---------------------------------------------------------
+ */
 template <typename T>
-struct RedBlackNode;
+class RedBlackNode;
 
 template <typename T>
-struct RedBlackTree;
+class RedBlackTree;
 
+/*
+ * ---------------------------------------------------------
+ * Node Implementation
+ * ---------------------------------------------------------
+ */
 template <typename T>
-struct RedBlackNode {
+class RedBlackNode {
 
 public:
     T value = {};
@@ -30,6 +53,12 @@ public:
     RedBlackNode<T>* left = nullptr;
     RedBlackNode<T>* right = nullptr;
     RedBlackNode<T>* parent = nullptr;
+
+    /*
+     * ---------------------------------------------------------
+     * Rotations
+     * ---------------------------------------------------------
+     */
 
     static void RotateLeft(RedBlackTree<T>* t, RedBlackNode<T>* x) {
         auto y = x->right;
@@ -69,25 +98,28 @@ public:
 
 };
 
+/*
+ * ---------------------------------------------------------
+ * Tree Implementation
+ * ---------------------------------------------------------
+ */
 template <typename T>
-struct RedBlackTree {
+class RedBlackTree {
 
 public:
     RedBlackNode<T>* root = nullptr;
 
-    RedBlackNode<T>* Search(T key) {
-        auto current = root;
-        while (current) {
-            if(key == current->value) {
-                return current;
-            } else if (key < current->value) {
-                current = current->left;
-            } else {
-                current = current->right;
-            }
-        }
-        return nullptr;
-    }
+    /*
+     * ---------------------------------------------------------
+     * Public Methods
+     * ---------------------------------------------------------
+     */
+
+    /*
+     * ---------------------------------------------------------
+     * Basic Operations (Insert, Delete, Height, Size and Search)
+     * ---------------------------------------------------------
+     */
 
     void Insert(T value) {
         RedBlackNode<T>* x = new RedBlackNode<T>();
@@ -107,6 +139,20 @@ public:
         }
     }
 
+    RedBlackNode<T>* Search(T key) {
+        auto current = root;
+        while (current) {
+            if(key == current->value) {
+                return current;
+            } else if (key < current->value) {
+                current = current->left;
+            } else {
+                current = current->right;
+            }
+        }
+        return nullptr;
+    }
+
     int Size() {
         if(root == nullptr) {
             return 0;
@@ -119,7 +165,13 @@ public:
         return HeightRecursive(root);
     }
 
-    std::vector<RedBlackNode<T>*> ToList(WalkOrder x = PREORDER) {
+    /*
+     * ---------------------------------------------------------
+     * Tree to Vector Conversion
+     * ---------------------------------------------------------
+     */
+
+    virtual std::vector<RedBlackNode<T>*> ToList(WalkOrder x) {
         std::vector<RedBlackNode<T>*> list;
         if(x == PREORDER) {
             ToListPreOrder(root, &list);
@@ -131,173 +183,125 @@ public:
         return list;
     }
 
-    void Print(WalkOrder x = PREORDER) {
+    /*
+     * ---------------------------------------------------------
+     * Printing (1D and 2D)
+     * ---------------------------------------------------------
+     */
+
+    virtual void Print(WalkOrder x, bool c) {
         if(x == PREORDER) {
-            PrintPreOrder(root);
+            PrintPreOrder(root, c);
         } else if (x == INORDER) {
-            PrintInOrder(root);
+            PrintInOrder(root, c);
         } else {
-            PrintPostOrder(root);
+            PrintPostOrder(root, c);
         }
     }
 
-    void Print(RedBlackNode<T>* n, WalkOrder x = PREORDER) {
+    virtual void Print(WalkOrder x, RedBlackNode<T>* n, bool c) {
         if(x == PREORDER) {
-            PrintPreOrder(n);
+            PrintPreOrder(n, c);
         } else if (x == INORDER) {
-            PrintInOrder(n);
+            PrintInOrder(n, c);
         } else {
-            PrintPostOrder(n);
+            PrintPostOrder(n, c);
         }
     }
 
-    void Print2D() {
-        Print2DUtil(root, 0);
+    virtual void PrintDefault(bool c) {
+        Print(INORDER, c);
     }
 
-    void Print2D(RedBlackNode<T>* n)
+    virtual void PrintDefault(RedBlackNode<T>* n, bool c) {
+        Print(INORDER, n, c);
+    }
+
+    virtual void Print2D(bool c)
     {
-        Print2DUtil(n, 0);
+        Print2DUtil(root, 0, c);
+    }
+
+    virtual void Print2D(RedBlackNode<T>* n, bool c)
+    {
+        Print2DUtil(n, 0, c);
     }
 
 private:
 
-    void Print2DUtil(RedBlackNode<T>* root, int space)
-    {
-        if (root == NULL)
-            return;
-        space += 4;
-        Print2DUtil(root->right, space);
-        std::cout << std::endl;
-        for (int i = 4; i < space; i++) {
-            std::cout << " ";
-        }
-        std::cout << root->value << std::endl;
-        Print2DUtil(root->left, space);
-    }
+    /*
+     * ---------------------------------------------------------
+     * Private Methods
+     * ---------------------------------------------------------
+     */
 
-    const int PRINT2DCOUNT = 4;
+    /*
+     * ---------------------------------------------------------
+     * Basic Operations Logic
+     * ---------------------------------------------------------
+     */
 
-    void PrintRow(RedBlackNode<T>* p, int h, int d) {
-        std::vector<T> v;
-        GetLine(p, d, v);
-        std::cout << std::setw((h - d) * 2);
-        bool t = true;
-        if(v.size() > 1) {
-            for(T i: v) {
-                if(i != T()) {
-                    if(t) {
-                        std::cout << "/" << "  ";
-                    } else {
-                        std::cout << "\\" << "  ";
-                    }
-                }
-                t = !t;
-            }
-            std::cout << std::endl;
-            std::cout << std::setw((h - d) * 2);
-        }
-        for(T i : v) {
-            if(i != T()) {
-                std::cout << i << "  ";
-            }
-        }
-        std::cout << std::endl;
-    }
-
-    void GetLine(RedBlackNode<T>* r, int d, std::vector<T>& v) {
-        if(d <=0 && r != nullptr) {
-            v.push_back(root->value);
-            return;
-        }
-        if(root->left != nullptr) {
-            GetLine(r->left, d-1, v);
-        } else if (d-1 <= 0) {
-            v.push_back(T());
-        }
-        if(r->right != nullptr) {
-            GetLine(r->right, d-1, v);
-        } else if(d-1 <= 0) {
-            v.push_back(T());
-        }
-    }
-
-    int HeightRecursive(RedBlackNode<T>* x) {
-        if(!x) {
-            return 0;
-        } else {
-            int l = HeightRecursive(x->left);
-            int r = HeightRecursive(x->right);
-
-            if (l > r) {
-                return (l + 1);
+    void InsertNode(RedBlackNode<T>* z) {
+        RedBlackNode<T>* y = nullptr;
+        auto x = root;
+        while(x != nullptr) {
+            y = x;
+            if(z->value < x->value) {
+                x = x->left;
             } else {
-                return (r + 1);
+                x = x->right;
             }
         }
-    }
-
-    void ToListPreOrder(RedBlackNode<T>* n, std::vector<RedBlackNode<T>*>* list) {
-        if(!n) {
-            return;
-        }
-        list->push_back(n);
-        ToListPreOrder(n->left, list);
-        ToListPreOrder(n->right, list);
-    }
-
-    void ToListInOrder(RedBlackNode<T>* n, std::vector<RedBlackNode<T>*>* list) {
-        if(!n) {
-            return;
-        }
-        ToListInOrder(n->left, list);
-        list->push_back(n);
-        ToListInOrder(n->right, list);
-    }
-
-    void ToListPostOrder(RedBlackNode<T>* n, std::vector<RedBlackNode<T>*>* list) {
-        if(!n) {
-            return;
-        }
-        ToListPostOrder(n->left, list);
-        ToListPostOrder(n->right, list);
-        list->push_back(n);
-    }
-
-    void PrintPreOrder(RedBlackNode<T>* n) {
-        if(!n) {
-            return;
-        }
-        std::cout << n->value << " ";
-        PrintPreOrder(n->left);
-        PrintPreOrder(n->right);
-    }
-
-    void PrintInOrder(RedBlackNode<T>* n) {
-        if(!n) {
-            return;
-        }
-        PrintInOrder(n->left);
-        std::cout << n->value << "(" << (n->color == BLACK ? "Black" : "Red") << ")" << " ";
-        PrintInOrder(n->right);
-    }
-
-    void PrintPostOrder(RedBlackNode<T>* n) {
-        if(!n) {
-            return;
-        }
-        PrintPostOrder(n->left);
-        PrintPostOrder(n->right);
-        std::cout << n->value << " ";
-    }
-
-    int SizeRecursive(RedBlackNode<T>* n) {
-        if(n == nullptr) {
-            return 0;
+        z->parent = y;
+        if(y == nullptr) {
+            root = z;
+        } else if(z->value < y->value) {
+            y->left = z;
         } else {
-            return (SizeRecursive(n->left) + 1 + SizeRecursive(n->right));
+            y->right = z;
+        }
+        z->left = nullptr;
+        z->right = nullptr;
+        z->color = RED;
+        InsertRepair(z);
+    }
+
+    void DeleteNode(RedBlackNode<T>* z) {
+        auto y = z;
+        auto yOriginalColor = y->color;
+        RedBlackNode<T>* x;
+        if(z->left == nullptr) {
+            x = z->right;
+            Swap(z, z->right);
+        } else if(z->right == nullptr) {
+            x = z->left;
+            Swap(z, z->left);
+        } else {
+            y = Minimum(z->right);
+            yOriginalColor = y->color;
+            x = z->right;
+            if(y->parent == z) {
+                x->parent = y;
+            } else {
+                Swap(y, y->right);
+                y->right = z->right;
+                y->right->parent = y;
+            }
+            Swap(z, y);
+            y->left = z->left;
+            y->left->parent = y;
+            y->color = z->color;
+        }
+        if(yOriginalColor == BLACK) {
+            DeleteRepair(x);
         }
     }
+
+    /*
+     * ---------------------------------------------------------
+     * Basic Operations Utilities
+     * ---------------------------------------------------------
+     */
 
     void InsertRepair(RedBlackNode<T>* z) {
         if(!(z->parent) || !(z->parent->parent)) {
@@ -342,29 +346,68 @@ private:
 
     }
 
-    void InsertNode(RedBlackNode<T>* z) {
-        RedBlackNode<T>* y = nullptr;
-        auto x = root;
-        while(x != nullptr) {
-            y = x;
-            if(z->value < x->value) {
-                x = x->left;
+    void DeleteRepair(RedBlackNode<T>* x) {
+        while (x && x != root && x->color == BLACK) {
+            if(x == x->parent->left) {
+                auto w = x->parent->right;
+                if(w->color == RED) {
+                    w->color = BLACK;
+                    x->parent->color = RED;
+                    RedBlackNode<T>::RotateLeft(this, x->parent);
+                    w = x->parent->right;
+                }
+                if(w->left && w->right && w->left->color == BLACK && w->right->color == BLACK) {
+                    w->color = RED;
+                    x = x->parent;
+                } else if (w->right && w->right->color == BLACK) {
+                    if(w->left) {
+                        w->left->color = BLACK;
+                    }
+                    w->color = RED;
+                    RedBlackNode<T>::RotateRight(this, w);
+                    w = x->parent->right;
+                } else {
+                    w->color = x->parent->color;
+                    x->parent->color = BLACK;
+                    if(w->right) {
+                        w->right->color = BLACK;
+                    }
+                    RedBlackNode<T>::RotateLeft(this, x->parent);
+                    x = root;
+                }
             } else {
-                x = x->right;
+                auto w = x->parent->left;
+                if(w->color == RED) {
+                    w->color = BLACK;
+                    x->parent->color = RED;
+                    RedBlackNode<T>::RotateRight(this, x->parent);
+                    w = x->parent->left;
+                }
+                if(w->right && w->left && w->right->color == BLACK && w->left->color == BLACK) {
+                    w->color = RED;
+                    x = x->parent;
+                } else if (w->left && w->left->color == BLACK) {
+                    if(w->right) {
+                        w->right->color = BLACK;
+                    }
+                    w->color = RED;
+                    RedBlackNode<T>::RotateLeft(this, w);
+                    w = x->parent->left;
+                } else {
+                    w->color = x->parent->color;
+                    x->parent->color = BLACK;
+                    if(w->left) {
+                        w->left->color = BLACK;
+                    }
+                    RedBlackNode<T>::RotateRight(this, x->parent);
+                    x = root;
+                }
             }
         }
-        z->parent = y;
-        if(y == nullptr) {
-            root = z;
-        } else if(z->value < y->value) {
-            y->left = z;
-        } else {
-            y->right = z;
+        if(x) {
+            x->color = BLACK;
         }
-        z->left = nullptr;
-        z->right = nullptr;
-        z->color = RED;
-        InsertRepair(z);
+
     }
 
     void Swap(RedBlackNode<T>* x, RedBlackNode<T>* y) {
@@ -380,59 +423,6 @@ private:
         }
     }
 
-    void DeleteRepair(RedBlackNode<T>* x) {
-        while (x != root && x->color == BLACK) {
-            if(x == x->parent->left) {
-                auto w = x->parent->right;
-                if(w->color == RED) {
-                    w->color = BLACK;
-                    x->parent->color = RED;
-                    RedBlackNode<T>::RotateLeft(this, x->parent);
-                    w = x->parent->right;
-                }
-                if(w->left->color == BLACK && w->right->color == BLACK) {
-                    w->color = RED;
-                    x = x->parent;
-                } else if (w->right->color == BLACK) {
-                    w->left->color = BLACK;
-                    w->color = RED;
-                    RedBlackNode<T>::RotateRight(this, w);
-                    w = x->parent->right;
-                } else {
-                    w->color = x->parent->color;
-                    x->parent->color = BLACK;
-                    w->right->color = BLACK;
-                    RedBlackNode<T>::RotateLeft(this, x->parent);
-                    x = root;
-                }
-            } else {
-                auto w = x->parent->left;
-                if(w->color == RED) {
-                    w->color = BLACK;
-                    x->parent->color = RED;
-                    RedBlackNode<T>::RotateRight(this, x->parent);
-                    w = x->parent->left;
-                }
-                if(w->right->color == BLACK && w->left->color == BLACK) {
-                    w->color = RED;
-                    x = x->parent;
-                } else if (w->left->color == BLACK) {
-                    w->right->color = BLACK;
-                    w->color = RED;
-                    RedBlackNode<T>::RotateLeft(this, w);
-                    w = x->parent->left;
-                } else {
-                    w->color = x->parent->color;
-                    x->parent->color = BLACK;
-                    w->left->color = BLACK;
-                    RedBlackNode<T>::RotateRight(this, x->parent);
-                    x = root;
-                }
-            }
-        }
-        x->color = BLACK;
-    }
-
     RedBlackNode<T>* Minimum(RedBlackNode<T>* x) {
         while (x->left != nullptr) {
             x = x->left;
@@ -440,38 +430,133 @@ private:
         return x;
     }
 
-    void DeleteNode(RedBlackNode<T>* z) {
-        auto y = z;
-        auto yOriginalColor = y->color;
-        RedBlackNode<T>* x;
-        if(z->left == nullptr) {
-            x = z->right;
-            Swap(z, z->right);
-        } else if(z->right == nullptr) {
-            x = z->left;
-            Swap(z, z->left);
+    /*
+     * ---------------------------------------------------------
+     * Height and Size Logic
+     * ---------------------------------------------------------
+     */
+
+    int HeightRecursive(RedBlackNode<T>* x) {
+        if(!x) {
+            return 0;
         } else {
-            y = Minimum(z->right);
-            yOriginalColor = y->color;
-            x = y->right;
-            if(y->parent == z) {
-                x->parent = y;
+            int l = HeightRecursive(x->left);
+            int r = HeightRecursive(x->right);
+
+            if (l > r) {
+                return (l + 1);
             } else {
-                Swap(y, y->right);
-                y->right = z->right;
-                y->right->parent = y;
+                return (r + 1);
             }
-            Swap(z, y);
-            y->left = z->left;
-            y->left->parent = y;
-            y->color = z->color;
         }
-        if(yOriginalColor == BLACK) {
-            DeleteRepair(x);
+    }
+
+    int SizeRecursive(RedBlackNode<T>* n) {
+        if(n == nullptr) {
+            return 0;
+        } else {
+            return (SizeRecursive(n->left) + 1 + SizeRecursive(n->right));
         }
+    }
+
+    /*
+     * ---------------------------------------------------------
+     * To Vector Conversion Utilities
+     * ---------------------------------------------------------
+     */
+
+    void ToListPreOrder(RedBlackNode<T>* n, std::vector<RedBlackNode<T>*>* list) {
+        if(!n) {
+            return;
+        }
+        list->push_back(n);
+        ToListPreOrder(n->left, list);
+        ToListPreOrder(n->right, list);
+    }
+
+    void ToListInOrder(RedBlackNode<T>* n, std::vector<RedBlackNode<T>*>* list) {
+        if(!n) {
+            return;
+        }
+        ToListInOrder(n->left, list);
+        list->push_back(n);
+        ToListInOrder(n->right, list);
+    }
+
+    void ToListPostOrder(RedBlackNode<T>* n, std::vector<RedBlackNode<T>*>* list) {
+        if(!n) {
+            return;
+        }
+        ToListPostOrder(n->left, list);
+        ToListPostOrder(n->right, list);
+        list->push_back(n);
+    }
+
+    /*
+     * ---------------------------------------------------------
+     * Printing Utilities
+     * ---------------------------------------------------------
+     */
+
+    virtual void PrintPreOrder(RedBlackNode<T>* n, bool c) {
+        if(!n) {
+            return;
+        }
+        std::string s = "";
+        if(c) {
+            s = root->color == BLACK ? "(B)" : "(R)";
+        }
+        std::cout << n->value << s << " ";
+        PrintPreOrder(n->left, c);
+        PrintPreOrder(n->right, c);
+    }
+
+    virtual void PrintInOrder(RedBlackNode<T>* n, bool c) {
+        if(!n) {
+            return;
+        }
+        PrintInOrder(n->left, c);
+        std::string s = "";
+        if(c) {
+            s = root->color == BLACK ? "(B)" : "(R)";
+        }
+        std::cout << n->value << s << " ";
+        PrintInOrder(n->right, c);
+    }
+
+    virtual void PrintPostOrder(RedBlackNode<T>* n, bool c) {
+        if(!n) {
+            return;
+        }
+        PrintPostOrder(n->left, c);
+        PrintPostOrder(n->right, c);
+        std::string s = "";
+        if(c) {
+            s = root->color == BLACK ? "(B)" : "(R)";
+        }
+        std::cout << n->value  << s << " ";
+    }
+
+    virtual void Print2DUtil(RedBlackNode<T>* root, int space, bool c)
+    {
+        if (root == NULL) {
+            return;
+        }
+        space += 4;
+        Print2DUtil(root->right, space, c);
+        std::cout << std::endl;
+        for (int i = 4; i < space; i++) {
+            std::cout << " ";
+        }
+        std::string s = "";
+        if(c) {
+            s = root->color == BLACK ? "(B)" : "(R)";
+        }
+        std::cout << root->value <<  s << " " << std::endl;
+        Print2DUtil(root->left, space, c);
     }
 
 };
 
 
-#endif //REDBLACKTREECLI_REDBLACKTREE_H
+#endif //REDBLACKTREE_REDBLACKTREE_H

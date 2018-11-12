@@ -189,42 +189,42 @@ public:
      * ---------------------------------------------------------
      */
 
-    virtual void Print(WalkOrder x) {
+    virtual void Print(WalkOrder x, bool c) {
         if(x == PREORDER) {
-            PrintPreOrder(root);
+            PrintPreOrder(root, c);
         } else if (x == INORDER) {
-            PrintInOrder(root);
+            PrintInOrder(root, c);
         } else {
-            PrintPostOrder(root);
+            PrintPostOrder(root, c);
         }
     }
 
-    virtual void Print(WalkOrder x, RedBlackNode<T>* n) {
+    virtual void Print(WalkOrder x, RedBlackNode<T>* n, bool c) {
         if(x == PREORDER) {
-            PrintPreOrder(n);
+            PrintPreOrder(n, c);
         } else if (x == INORDER) {
-            PrintInOrder(n);
+            PrintInOrder(n, c);
         } else {
-            PrintPostOrder(n);
+            PrintPostOrder(n, c);
         }
     }
 
-    virtual void PrintDefault() {
-        Print(INORDER);
+    virtual void PrintDefault(bool c) {
+        Print(INORDER, c);
     }
 
-    virtual void PrintDefault(RedBlackNode<T>* n) {
-        Print(INORDER, n);
+    virtual void PrintDefault(RedBlackNode<T>* n, bool c) {
+        Print(INORDER, n, c);
     }
 
-    virtual void Print2D()
+    virtual void Print2D(bool c)
     {
-        Print2DUtil(root, 0);
+        Print2DUtil(root, 0, c);
     }
 
-    virtual void Print2D(RedBlackNode<T>* n)
+    virtual void Print2D(RedBlackNode<T>* n, bool c)
     {
-        Print2DUtil(n, 0);
+        Print2DUtil(n, 0, c);
     }
 
 private:
@@ -487,44 +487,62 @@ private:
      * ---------------------------------------------------------
      */
 
-    virtual void PrintPreOrder(RedBlackNode<T>* n) {
+    virtual void PrintPreOrder(RedBlackNode<T>* n, bool c) {
         if(!n) {
             return;
         }
-        std::cout << n->value << " ";
-        PrintPreOrder(n->left);
-        PrintPreOrder(n->right);
+        std::string s = "";
+        if(c) {
+            s = root->color == BLACK ? "(B)" : "(R)";
+        }
+        std::cout << n->value << s << " ";
+        PrintPreOrder(n->left, c);
+        PrintPreOrder(n->right, c);
     }
 
-    virtual void PrintInOrder(RedBlackNode<T>* n) {
+    virtual void PrintInOrder(RedBlackNode<T>* n, bool c) {
         if(!n) {
             return;
         }
-        PrintInOrder(n->left);
-        std::cout << n->value << "(" << (n->color == BLACK ? "Black" : "Red") << ")" << " ";
-        PrintInOrder(n->right);
+        PrintInOrder(n->left, c);
+        std::string s = "";
+        if(c) {
+            s = root->color == BLACK ? "(B)" : "(R)";
+        }
+        std::cout << n->value << s << " ";
+        PrintInOrder(n->right, c);
     }
 
-    virtual void PrintPostOrder(RedBlackNode<T>* n) {
+    virtual void PrintPostOrder(RedBlackNode<T>* n, bool c) {
         if(!n) {
             return;
         }
-        PrintPostOrder(n->left);
-        PrintPostOrder(n->right);
-        std::cout << n->value << " ";
+        PrintPostOrder(n->left, c);
+        PrintPostOrder(n->right, c);
+        std::string s = "";
+        if(c) {
+            s = root->color == BLACK ? "(B)" : "(R)";
+        }
+        std::cout << n->value  << s << " ";
     }
 
-    virtual void Print2DUtil(RedBlackNode<T>* root, int space)
+    virtual void Print2DUtil(RedBlackNode<T>* root, int space, bool c)
     {
-        if (root == NULL)
+        if (root == NULL) {
             return;
+        }
         space += 4;
-        Print2DUtil(root->right, space);
-        printf("\n");
-        for (int i = 4; i < space; i++)
-            printf(" ");
-        printf("%d\n", root->value);
-        Print2DUtil(root->left, space);
+        Print2DUtil(root->right, space, c);
+        std::cout << std::endl;
+        for (int i = 4; i < space; i++) {
+            std::cout << " ";
+        }
+        std::string s = "";
+        if(c) {
+            s = root->color == BLACK ? "(B)" : "(R)";
+        }
+        std::cout << root->value <<  s << " " << std::endl;
+        Print2DUtil(root->left, space, c);
     }
 
 };

@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTreeCLI/CLI/CLI.cpp">
+			<Option target="RedBlackTreeCLI"/>
+		</Unit>
+		<Unit filename="C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTreeCLI/CLI/CLI.h">
+			<Option target="RedBlackTreeCLI"/>
+		</Unit>
 		<Unit filename="C:/Users/Alejandro/Documents/Tec/RedBlackTree/RedBlackTreeCLI/Structures/RedBlackTree.cpp">
 			<Option target="RedBlackTreeCLI"/>
 		</Unit>

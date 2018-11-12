@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/RedBlackTree.iml" filepath="$PROJECT_DIR$/.idea/RedBlackTree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/RedBlackTreeCLI.iml" filepath="$PROJECT_DIR$/.idea/RedBlackTreeCLI.iml" />
     </modules>
   </component>
 </project>

@@ -12,24 +12,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f044c4e0-cc88-41a5-afe6-679d284a81d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/RedBlackTreeCLI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Structures/RedBlackTree.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Structures/RedBlackTree.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RedBlackTreeQtLite/RedBlackTreeQtLite.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RedBlackTreeQtLite/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RedBlackTreeQtLite/mainwindow.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RedBlackTreeQtLite/mainwindow.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RedBlackTreeQtLite/mainwindow.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLI/CLI.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLI/CLI.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RedBlackTree/.idea/RedBlackTree.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RedBlackTree/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTree/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RedBlackTree/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTree/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RedBlackTree/Structures/RedBlackTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTree/Structures/RedBlackTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RedBlackTree/cmake-build-debug/CMakeFiles/RedBlackTree.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTree/cmake-build-debug/CMakeFiles/RedBlackTree.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RedBlackTree/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTree/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structures/RedBlackTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Structures/RedBlackTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RedBlackTreeCLI.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RedBlackTreeCLI.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RedBlackTreeCLI.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RedBlackTreeQt/RedBlackTreeQtLite.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTreeQt/RedBlackTreeQtLite.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RedBlackTreeQt/RedBlackTreeQtLite.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTreeQt/RedBlackTreeQtLite.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RedBlackTreeQt/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTreeQt/mainwindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RedBlackTreeQt/redblacktreeqt.h" beforeDir="false" afterPath="$PROJECT_DIR$/../RedBlackTreeQt/redblacktreeqt.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,35 +50,37 @@
     <session id="481614046">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cpp" value="1" />
-          <entry key="h" value="1" />
+          <entry key="cpp" value="2" />
+          <entry key="h" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="2" />
+          <entry key="ObjectiveC" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="h" value="192" />
+          <entry key="cpp" value="42" />
+          <entry key="h" value="2628" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="192" />
+          <entry key="ObjectiveC" value="2670" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor" />
@@ -80,8 +89,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="102">
+              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,14 +106,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Structures/RedBlackTree.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2635">
-              <caret line="159" column="26" lean-forward="true" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
+            <state relative-caret-position="2142">
+              <caret line="130" column="37" selection-start-line="130" selection-start-column="37" selection-end-line="130" selection-end-column="37" />
               <folding>
-                <element signature="e#126#144#0" expanded="true" />
-                <element signature="e#352#364#0" expanded="true" />
-                <element signature="e#396#408#0" expanded="true" />
-                <element signature="e#477#489#0" expanded="true" />
-                <element signature="e#1652#1664#0" expanded="true" />
+                <element signature="e#288#306#0" expanded="true" />
+                <element signature="e#775#787#0" expanded="true" />
+                <element signature="e#818#830#0" expanded="true" />
+                <element signature="e#1013#1025#0" expanded="true" />
+                <element signature="e#2502#2514#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CLI/CLI.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CLI/CLI.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding>
+                <element signature="e#276#295#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,6 +148,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/CLI/CLI.h" />
         <option value="$PROJECT_DIR$/Structures/RedBlackTree.h" />
       </list>
     </option>
@@ -126,10 +161,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -137,7 +171,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,12 +181,18 @@
             <path>
               <item name="RedBlackTreeCLI" type="b2602c69:ProjectViewProjectNode" />
               <item name="RedBlackTreeCLI" type="462c0819:PsiDirectoryNode" />
+              <item name="CLI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RedBlackTreeCLI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RedBlackTreeCLI" type="462c0819:PsiDirectoryNode" />
               <item name="Structures" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -199,36 +238,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541870078597</updated>
-      <workItem from="1541870081029" duration="1329000" />
+      <workItem from="1541870081029" duration="11599000" />
+      <workItem from="1541987750056" duration="315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1329000" />
+    <option name="totallyTimeSpent" value="11914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16717096" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="CMake" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34918034" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40491804" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32459018" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,30 +278,61 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Structures/RedBlackTree.h</url>
+          <line>135</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Structures/RedBlackTree.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/CLI/CLI.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CLI/CLI.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="e#276#295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Structures/RedBlackTree.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2635">
-          <caret line="159" column="26" lean-forward="true" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
+        <state relative-caret-position="2142">
+          <caret line="130" column="37" selection-start-line="130" selection-start-column="37" selection-end-line="130" selection-end-column="37" />
           <folding>
-            <element signature="e#126#144#0" expanded="true" />
-            <element signature="e#352#364#0" expanded="true" />
-            <element signature="e#396#408#0" expanded="true" />
-            <element signature="e#477#489#0" expanded="true" />
-            <element signature="e#1652#1664#0" expanded="true" />
+            <element signature="e#288#306#0" expanded="true" />
+            <element signature="e#775#787#0" expanded="true" />
+            <element signature="e#818#830#0" expanded="true" />
+            <element signature="e#1013#1025#0" expanded="true" />
+            <element signature="e#2502#2514#0" expanded="true" />
           </folding>
         </state>
       </provider>

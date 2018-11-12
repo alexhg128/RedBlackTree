@@ -122,6 +122,33 @@ RedBlackTreeCLI/fast:
 	$(MAKE) -f CMakeFiles\RedBlackTreeCLI.dir\build.make CMakeFiles/RedBlackTreeCLI.dir/build
 .PHONY : RedBlackTreeCLI/fast
 
+CLI/CLI.obj: CLI/CLI.cpp.obj
+
+.PHONY : CLI/CLI.obj
+
+# target to build an object file
+CLI/CLI.cpp.obj:
+	$(MAKE) -f CMakeFiles\RedBlackTreeCLI.dir\build.make CMakeFiles/RedBlackTreeCLI.dir/CLI/CLI.cpp.obj
+.PHONY : CLI/CLI.cpp.obj
+
+CLI/CLI.i: CLI/CLI.cpp.i
+
+.PHONY : CLI/CLI.i
+
+# target to preprocess a source file
+CLI/CLI.cpp.i:
+	$(MAKE) -f CMakeFiles\RedBlackTreeCLI.dir\build.make CMakeFiles/RedBlackTreeCLI.dir/CLI/CLI.cpp.i
+.PHONY : CLI/CLI.cpp.i
+
+CLI/CLI.s: CLI/CLI.cpp.s
+
+.PHONY : CLI/CLI.s
+
+# target to generate assembly for a file
+CLI/CLI.cpp.s:
+	$(MAKE) -f CMakeFiles\RedBlackTreeCLI.dir\build.make CMakeFiles/RedBlackTreeCLI.dir/CLI/CLI.cpp.s
+.PHONY : CLI/CLI.cpp.s
+
 Structures/RedBlackTree.obj: Structures/RedBlackTree.cpp.obj
 
 .PHONY : Structures/RedBlackTree.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... RedBlackTreeCLI
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... CLI/CLI.obj
+	@echo ... CLI/CLI.i
+	@echo ... CLI/CLI.s
 	@echo ... Structures/RedBlackTree.obj
 	@echo ... Structures/RedBlackTree.i
 	@echo ... Structures/RedBlackTree.s

@@ -7,43 +7,43 @@ int main() {
 
     tree->Insert(5);
     std::cout << std::endl;
-    tree->Print(INORDER);
+    tree->Print(INORDER, false);
     std::cout << std::endl;
     std::cout << tree->root->value;
 
     tree->Insert(4);
     std::cout << std::endl;
-    tree->Print(INORDER);
+    tree->Print(INORDER, false);
     std::cout << std::endl;
     std::cout << tree->root->value;
 
     tree->Insert(55);
     std::cout << std::endl;
-    tree->Print(INORDER);
+    tree->Print(INORDER, false);
     std::cout << std::endl;
     std::cout << tree->root->value;
 
     tree->Insert(8);
     std::cout << std::endl;
-    tree->Print(INORDER);
+    tree->Print(INORDER, false);
     std::cout << std::endl;
     std::cout << tree->root->value;
 
     tree->Insert(2);
     std::cout << std::endl;
-    tree->Print(INORDER);
+    tree->Print(INORDER, false);
     std::cout << std::endl;
     std::cout << tree->root->value;
 
     tree->Insert(6);
     std::cout << std::endl;
-    tree->Print(INORDER);
+    tree->Print(INORDER, false);
     std::cout << std::endl;
     std::cout << tree->root->value;
 
     tree->Delete(2);
     std::cout << std::endl;
-    tree->Print(INORDER);
+    tree->Print(INORDER, false);
     std::cout << std::endl;
     std::cout << tree->root->value;
 
@@ -51,7 +51,7 @@ int main() {
     std::cout << std::endl;
     std::cout << std::endl;
 
-    tree->print2D(tree->root);
+    tree->Print2D(false);
 
 
     return 0;
