@@ -129,13 +129,13 @@ public:
     }
 
     void Delete(RedBlackNode<T>* x) {
-        DeleteNode(x);
+        DeleteNodeV2(x);
     }
 
     void Delete(T value) {
         RedBlackNode<T>* x = Search(value);
         if(x) {
-            DeleteNode(x);
+            DeleteNodeV2(x);
         }
     }
 
@@ -294,6 +294,46 @@ private:
         }
         if(yOriginalColor == BLACK) {
             DeleteRepair(x);
+        }
+    }
+
+    void DeleteNodeV2(RedBlackNode<T>* z) {
+        Color c = z->color;
+        if(z->left == nullptr) {
+            Swap(z, z->right);
+        } else if(z->right == nullptr) {
+            Swap(z, z->left);
+        } else {
+            auto y = Minimum(z->right);
+            if(y->parent != z) {
+                Swap(y, y->right);
+                y->right = z->right;
+                y->right->parent = y;
+            }
+            Swap(z, y);
+            y->left = z->left;
+            y->left->parent = y;
+        }
+
+        if(c == BLACK) {
+            auto w = Minimum(root);
+            T key = w->value;
+            if(w->left == nullptr) {
+                Swap(w, w->right);
+            } else if(w->right == nullptr) {
+                Swap(w, w->left);
+            } else {
+                auto y = Minimum(w->right);
+                if(y->parent != w) {
+                    Swap(y, y->right);
+                    y->right = w->right;
+                    y->right->parent = y;
+                }
+                Swap(w, y);
+                y->left = w->left;
+                y->left->parent = y;
+            }
+            Insert(key);
         }
     }
 
